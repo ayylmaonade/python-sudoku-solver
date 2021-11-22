@@ -22,9 +22,9 @@ The UI depends on **PyGame** to function, you _must_ have it installed or the UI
 
 - Windows & Mac: No idea, I don't use either.
 
-**Running Soduku Solver:**
+**Running Sudoku Solver:**
 - Make sure both **solver.py** & **GUI.py** are in the same directory.
-- cd into the directory using your terminal - e.g. `cd ~/python-soduku-solver`
+- cd into the directory using your terminal - e.g. `cd ~/python-sudoku-solver`
 - Run the game from **GUI.py** using `python3 -m GUI.py`
 
 Alternatively, you can change the GUI file into a direct executable.
