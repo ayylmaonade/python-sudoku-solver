@@ -2,8 +2,22 @@
 import pygame 
 from solver import solve, valid
 import time
+import keyboard
 pygame.font.init()
 
+# close the game window when ctrl + q is pressed if the WM and/or compositor fail to respond
+#while True:
+#    try:
+#        if keyboard_is_pressed('q'):
+#            exit
+#            break # close the loop so syntax errors don't get shit all over terminal
+#    except: 
+#    break # jesus this is bad implementation but it'll probably work
+# So, nevermind about this entire fucking loop. Apparently importing keystrokes requires fucking
+# _root_. Are you actually serious Python? How goddamn retarded. I don't even care that this loop
+# was terrible form, it would've worked. It's still retarded that PARSING THE USERS FUCKING
+# KEYBOARD REQUIRES ROOT. "To avoid depending on X, the Linux part reads raw device files
+# ((/dev/input/input*) but this requires root" -- just... wow. That is mindboggingly retarded.
 
 class Grid:
     board = [
@@ -114,7 +128,7 @@ class Cube:
         self.selected = False
 
     def draw(self, win):
-        fnt = pygame.font.SysFont("comicsans", 40)
+        fnt = pygame.font.SysFont("Roboto", 40)
 
         gap = self.width / 9
         x = self.col * gap
@@ -140,7 +154,7 @@ class Cube:
 def redraw_window(win, board, time, strikes):
     win.fill((255,255,255))
     # draws time
-    fnt = pygame.font.SysFont("comicsans", 20)
+    fnt = pygame.font.SysFont("DejaVu Sans", 18)
     text = fnt.render("Time: " + format_time(time), 1, (0,0,0))
     win.blit(text, (20, 560))
     # draw strikes
