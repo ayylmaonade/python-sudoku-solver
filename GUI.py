@@ -1,8 +1,10 @@
+#!/usr/bin/env python3
+
 # GUI.py
 import pygame 
 from solver import solve, valid
 import time
-import keyboard
+#import keyboard
 pygame.font.init()
 
 # close the game window when ctrl + q is pressed if the WM and/or compositor fail to respond

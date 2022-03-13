@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 # solver.py
 
 def solve(bo):
